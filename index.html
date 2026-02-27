@@ -4,217 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bacon Hill Reformed Church | Faith, Community & Service</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --church-blue: #2c3e50;
-            --church-gold: #c5a059;
-            --church-bg: #fdfcf9;
-            --text-dark: #333333;
+            --church-red: #8B0000; /* لون كلاسيكي للكنائس */
+            --warm-beige: #FDF5E6;
+            --deep-gray: #2D3436;
+            --white: #ffffff;
+            --gold-leaf: #D4AF37;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Lato', sans-serif; background-color: var(--church-bg); color: var(--text-dark); line-height: 1.8; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--church-blue); }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--white); color: var(--deep-gray); line-height: 1.8; scroll-behavior: smooth; }
 
         /* Navigation */
         nav {
-            background: white;
-            padding: 20px 5%;
+            background: var(--white);
+            padding: 25px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--church-red);
         }
-        .logo { font-size: 1.4rem; font-weight: 700; text-decoration: none; color: var(--church-blue); display: flex; align-items: center; gap: 10px; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); margin-left: 25px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: var(--church-gold); }
+        .logo { font-family: 'Crimson Text', serif; font-weight: 700; font-size: 1.6rem; color: var(--church-red); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a { text-decoration: none; color: var(--deep-gray); margin-left: 25px; font-weight: 400; transition: 0.3s; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; }
+        .nav-links a:hover { color: var(--church-red); }
 
         /* Hero Section */
         header {
-            height: 90vh;
-            background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.6)), 
-                        url('https://images.pexels.com/photos/2360559/pexels-photo-2360559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: var(--white);
             text-align: center;
             padding: 0 5%;
         }
-        header h1 { color: white; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 25px; }
-        header p { font-size: 1.3rem; max-width: 800px; margin-bottom: 40px; font-weight: 300; }
+        header h1 { font-family: 'Crimson Text', serif; font-size: clamp(2.5rem, 7vw, 4.5rem); margin-bottom: 15px; font-style: italic; }
+        header p { font-size: 1.2rem; max-width: 800px; letter-spacing: 1px; opacity: 0.95; font-weight: 300; }
 
-        .btn { padding: 18px 40px; border-radius: 2px; text-decoration: none; font-weight: 700; text-transform: uppercase; transition: 0.3s; display: inline-block; }
-        .btn-gold { background: var(--church-gold); color: white; }
-        .btn-gold:hover { background: #b08d4b; transform: translateY(-3px); }
+        .ein-bar { background: var(--church-red); color: var(--white); padding: 15px 5%; text-align: center; font-weight: 700; font-size: 0.95rem; letter-spacing: 2px; }
 
         /* Sections */
-        section { padding: 100px 5%; max-width: 1400px; margin: auto; }
-        .section-header { text-align: center; margin-bottom: 70px; }
-        .section-header h2 { font-size: 3rem; margin-bottom: 20px; }
-        .section-header::after { content: ''; width: 60px; height: 3px; background: var(--church-gold); display: block; margin: 0 auto; }
+        section { padding: 100px 10%; max-width: 1400px; margin: auto; }
+        .section-title { font-family: 'Crimson Text', serif; text-align: center; margin-bottom: 60px; font-size: 3rem; color: var(--church-red); }
+        .section-title::after { content: '✝'; display: block; font-size: 1.5rem; color: var(--gold-leaf); margin-top: 10px; }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        /* Mission Section */
+        .mission-box { background: var(--warm-beige); padding: 70px; border-radius: 5px; border: 1px solid #eee; text-align: center; }
+        .mission-box p { font-size: 1.2rem; font-family: 'Crimson Text', serif; color: #444; font-style: italic; margin-bottom: 25px; }
 
-        .card { background: white; padding: 40px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f0f0f0; transition: 0.3s; height: 100%; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.07); }
-        .card img { width: 100%; border-radius: 4px; margin-bottom: 25px; height: 220px; object-fit: cover; }
+        /* Gallery - 6 Images (Community Focused) */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .gallery-item { position: relative; overflow: hidden; height: 300px; border: 5px solid var(--white); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-cap { position: absolute; bottom: 0; background: rgba(255,255,255,0.9); color: var(--church-red); width: 100%; padding: 15px; font-weight: 700; text-align: center; font-size: 0.8rem; text-transform: uppercase; }
 
-        /* Legal Box */
-        .legal-box { background: #f9f9f9; padding: 50px; border-radius: 4px; border-top: 5px solid var(--church-blue); }
+        /* Official Details Table */
+        .official-table { width: 100%; border-collapse: collapse; margin-top: 40px; background: #fff; }
+        .official-table td { padding: 20px; border: 1px solid #eee; }
+        .label { font-weight: 700; color: var(--church-red); width: 30%; text-transform: uppercase; font-size: 0.8rem; }
 
-        /* Footer */
-        footer { background: #1a1a1a; color: #999; padding: 80px 5% 40px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 60px; }
-        .footer-col h4 { color: white; margin-bottom: 25px; font-family: 'Playfair Display', serif; }
-        .footer-col li { list-style: none; margin-bottom: 12px; font-size: 0.9rem; }
+        footer { background: var(--deep-gray); color: var(--white); padding: 80px 10% 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 60px; }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; font-size: 0.8rem; opacity: 0.5; }
 
-        @media (max-width: 900px) {
-            .grid-2 { grid-template-columns: 1fr; }
-            header h1 { font-size: 2.8rem; }
-        }
+        @media (max-width: 992px) { .footer-grid, .official-table td { display: block; width: 100%; } .mission-box { padding: 30px; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">⛪ BACON HILL REFORMED CHURCH</a>
+        <a href="#" class="logo">Bacon Hill Reformed Church</a>
         <div class="nav-links">
-            <a href="#worship">Worship</a>
-            <a href="#about">About</a>
-            <a href="#mission">Mission</a>
-            <a href="#legal">Transparency</a>
+            <a href="#mission">Our Faith</a>
+            <a href="#community">Community</a>
+            <a href="#official">Legal Info</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header>
-        <h1>A Community Rooted in Faith</h1>
-        <p>Serving Schuylerville and the surrounding areas since the 19th century, dedicated to spreading hope, love, and spiritual guidance to all.</p>
-        <a href="#contact" class="btn btn-gold">Join Our Community</a>
+        <h1>A Community of Grace</h1>
+        <p>Serving the Schuylerville community since 1820. Join us in faith, hope, and love.</p>
     </header>
 
-    <section id="worship" style="background: white; max-width: 100%; border-bottom: 1px solid #eee;">
-        <div style="max-width: 1400px; margin: auto; padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center; gap: 30px;">
-            <div><h3 style="font-size: 2.5rem; color: var(--church-gold);">Sunday</h3><p>Service at 10:00 AM</p></div>
-            <div><h3 style="font-size: 2.5rem; color: var(--church-gold);">100%</h3><p>Inclusive Faith</p></div>
-            <div><h3 style="font-size: 2.5rem; color: var(--church-gold);">Open</h3><p>Hearts & Minds</p></div>
-            <div><h3 style="font-size: 2.5rem; color: var(--church-gold);">Since</h3><p>Schuylerville Heritage</p></div>
+    <div class="ein-bar">
+        OFFICIAL NON-PROFIT ENTITY • EIN: 14-1487055 • SCHUYLERVILLE, NY
+    </div>
+
+    <section id="mission">
+        <h2 class="section-title">Our Mission</h2>
+        <div class="mission-box">
+            <p>"To grow in faith, share the message of Christ, and serve our neighbors with compassion and integrity."</p>
+            <p style="font-style: normal; font-size: 1.1rem; font-family: 'Montserrat';">Bacon Hill Reformed Church is a non-profit religious organization dedicated to providing spiritual guidance and community support in Schuylerville, NY. Our mission is to foster a welcoming environment where individuals and families can grow spiritually while engaging in meaningful service to those in need.</p>
+            <p style="font-style: normal; font-size: 1.1rem; font-family: 'Montserrat';">We are committed to the historical values of the Reformed Church, emphasizing education, community outreach, and social responsibility. Through our various programs, we strive to make a positive impact on the lives of our members and the broader community.</p>
         </div>
     </section>
 
-    <section id="about">
-        <div class="grid-2">
-            <div>
-                <img src="https://images.pexels.com/photos/157833/church-religion-christ-faith-157833.jpeg?auto=compress&cs=tinysrgb&w=600" style="width: 100%; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" alt="Church Sanctuary">
-            </div>
-            <div>
-                <h2 style="margin-bottom: 25px;">Our Sacred Heritage</h2>
-                <p style="margin-bottom: 20px;">The Bacon Hill Reformed Church is a beacon of light in Schuylerville, New York. We are a family of believers committed to living out the teachings of Christ through service, prayer, and community outreach.</p>
-                <p style="margin-bottom: 20px;">Our mission is to provide a sanctuary where everyone—regardless of where they are on their spiritual journey—can find peace, guidance, and belonging. We believe in the power of faith to transform lives and strengthen the social fabric of our town.</p>
-                <p>As a registered non-profit (EIN 14-1487055), we dedicate all our resources to spiritual education, community support, and charitable initiatives.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="mission" style="background: white; max-width: 100%;">
-        <div style="max-width: 1400px; margin: auto; padding: 0 5%;">
-            <div class="section-header">
-                <h2>Our Spiritual Mission</h2>
-                <p>Rooted in tradition, growing in love, and reaching out with hope.</p>
-            </div>
-            <div class="grid-3">
-                <div class="card">
-                    <img src="https://images.pexels.com/photos/1516518/pexels-photo-1516518.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sunday Worship">
-                    <h3>Spiritual Growth</h3>
-                    <p>Through Sunday worship, Bible study, and prayer circles, we nurture the individual spiritual growth of our members and their families.</p>
+    <section id="community" style="background: #fcfcfc; max-width: 100%;">
+        <div style="max-width: 1400px; margin: auto; padding: 0 10%;">
+            <h2 class="section-title">Life at Bacon Hill</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=80" alt="Worship">
+                    <div class="gallery-cap">Sunday Worship Services</div>
                 </div>
-                <div class="card">
-                    <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Community Outreach">
-                    <h3>Charitable Actions</h3>
-                    <p>We believe faith without works is dead. Our outreach programs provide food, support, and clothing to those in need within Schuylerville.</p>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80" alt="Community Meal">
+                    <div class="gallery-cap">Community Outreach Programs</div>
                 </div>
-                <div class="card">
-                    <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Youth Ministry">
-                    <h3>Youth Ministry</h3>
-                    <p>We empower the next generation with moral values and leadership skills through our Sunday school and youth empowerment initiatives.</p>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1490730141103-6ca27d924712?auto=format&fit=crop&w=600&q=80" alt="Church Interior">
+                    <div class="gallery-cap">Historical Preservation Work</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=600&q=80" alt="Youth Group">
+                    <div class="gallery-cap">Youth & Education Ministry</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&q=80" alt="Volunteers">
+                    <div class="gallery-cap">Volunteer Local Missions</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=600&q=80" alt="Garden">
+                    <div class="gallery-cap">Peace & Reflection Gardens</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="legal">
-        <div class="section-header"><h2>Legal & Non-Profit Status</h2></div>
-        <div class="legal-box">
-            <div class="grid-2">
-                <div>
-                    <h3 style="margin-bottom: 15px;">Privacy Policy</h3>
-                    <p style="font-size: 0.95rem; color: #666;">Bacon Hill Reformed Church respects your personal privacy. Information collected through this website is used solely for spiritual communication and community updates. We do not sell or trade data with third parties.</p>
-                </div>
-                <div>
-                    <h3 style="margin-bottom: 15px;">Non-Profit Status</h3>
-                    <p style="font-size: 0.95rem; color: #666;">We are a registered 501(c)(3) religious organization (EIN 14-1487055). All donations and contributions go directly to supporting our sanctuary, our staff, and our charitable missions in New York State.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" style="background: #fdfcf9; max-width: 100%;">
-        <div style="max-width: 1400px; margin: auto; padding: 0 5%;">
-            <div class="grid-2">
-                <div>
-                    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Visit Our Sanctuary</h2>
-                    <p style="margin-bottom: 20px;"><strong>📍 Address:</strong> 560 Route 32 N, Schuylerville, NY 12871-1986, USA</p>
-                    <p style="margin-bottom: 20px;"><strong>📧 Email:</strong> Raxeety.kdio@bacon-hill-reformed-church.sbs</p>
-                    <p style="margin-bottom: 20px;"><strong>🆔 Tax ID:</strong> EIN 14-1487055</p>
-                    <p><strong>📞 Office Hours:</strong> Tuesday - Friday, 9 AM - 2 PM</p>
-                </div>
-                <div class="card" style="background: var(--church-blue); color: white;">
-                    <h3 style="color: var(--church-gold); margin-bottom: 20px;">Prayer Requests</h3>
-                    <p style="margin-bottom: 30px; opacity: 0.8;">If you are facing hardship or need spiritual guidance, our deacons and pastoral staff are here for you.</p>
-                    <div style="padding: 15px; border: 1px dashed var(--church-gold); text-align: center;">
-                        Email: Raxeety.kdio@bacon-hill-reformed-church.sbs
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section id="official">
+        <h2 class="section-title">Official Registry Details</h2>
+        <table class="official-table">
+            <tr>
+                <td class="label">Legal Entity Name</td>
+                <td>Bacon Hill Reformed Church</td>
+            </tr>
+            <tr>
+                <td class="label">Tax ID (EIN)</td>
+                <td>14-1487055</td>
+            </tr>
+            <tr>
+                <td class="label">Organization Status</td>
+                <td>Registered 501(c)(3) Religious Non-Profit</td>
+            </tr>
+            <tr>
+                <td class="label">Mailing Address</td>
+                <td>560 Route 32 N, Schuylerville, NY 12871-1986</td>
+            </tr>
+            <tr>
+                <td class="label">Primary Email</td>
+                <td>Raxeety.kdio@bacon-hill-reformed-church.sbs</td>
+            </tr>
+        </table>
     </section>
 
     <footer>
         <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Bacon Hill Church</h4>
-                <p>A heritage of faith in Schuylerville since the 1800s. Dedicated to Christ, community, and compassionate service.</p>
+            <div>
+                <h3 style="font-family: 'Crimson Text', serif; font-size: 1.6rem; margin-bottom: 20px;">Bacon Hill Reformed Church</h3>
+                <p style="font-size: 0.9rem; opacity: 0.8;">A cornerstone of faith in Schuylerville since 1820. We are a registered non-profit organization dedicated to serving God and our neighbors.</p>
             </div>
-            <div class="footer-col">
-                <h4>Navigation</h4>
-                <li><a href="#worship" style="color:inherit; text-decoration:none;">Worship Times</a></li>
-                <li><a href="#about" style="color:inherit; text-decoration:none;">Our Story</a></li>
-                <li><a href="#mission" style="color:inherit; text-decoration:none;">Outreach</a></li>
+            <div>
+                <h4>Quick Links</h4>
+                <p style="margin-top: 15px;"><a href="#" style="color: white; text-decoration: none; font-size: 0.85rem;">Privacy Policy</a></p>
+                <p><a href="#" style="color: white; text-decoration: none; font-size: 0.85rem;">Donation Portal</a></p>
+                <p><a href="#" style="color: white; text-decoration: none; font-size: 0.85rem;">Terms of Service</a></p>
             </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <li>EIN 14-1487055</li>
-                <li>501(c)(3) Status</li>
-                <li>New York Registered</li>
-            </div>
-            <div class="footer-col">
-                <h4>Daily Verse</h4>
-                <p style="font-style: italic;">"For where two or three are gathered in my name, there am I among them."</p>
+            <div>
+                <h4>Contact Office</h4>
+                <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.8;">560 Route 32 N, Schuylerville, NY</p>
+                <p style="font-size: 0.85rem; opacity: 0.8;">EIN: 14-1487055</p>
+                <p style="font-size: 0.85rem; opacity: 0.8;">© 2026 Bacon Hill Reformed Church</p>
             </div>
         </div>
-        <p style="text-align: center; border-top: 1px solid #333; padding-top: 30px; font-size: 0.8rem;">
-            © 2026 Bacon Hill Reformed Church. All Rights Reserved. Official Website.
-        </p>
+        <div class="footer-bottom">
+            Official Non-Profit Public Website. All information is verified and maintained by the church administration.
+        </div>
     </footer>
 
 </body>
